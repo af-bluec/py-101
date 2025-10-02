@@ -1,241 +1,238 @@
-# Simple Python script demonstrating basic concepts
-# This script is generated to be approximately 100 lines long
-# It includes comments, functions, and a main execution block
+#!/usr/bin/env python3
+"""
+Refactored Python Demo Script - Main Entry Point
+
+This script demonstrates various Python concepts organized into modular components.
+The code has been refactored from a single file into reusable modules and functions.
+
+Author: Refactored Code Team
+Version: 2.0.0
+"""
 
 import sys
-import math
 import random
+from typing import Dict, Any
 
-# Function to calculate factorial
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
+# Import our modular components
+from config import (
+    WELCOME_MESSAGE, COMPLETION_MESSAGE, SEPARATOR, Colors,
+    DEFAULT_FIBONACCI_LENGTH, SAMPLE_NAMES
+)
+from utils import (
+    factorial, is_prime, fibonacci_sequence, greet, format_person_info,
+    demonstrate_lists, demonstrate_sets, demonstrate_dictionaries,
+    demonstrate_advanced_operations
+)
+from classes import Calculator
+from decorators import timer, example_function, expensive_calculation
+from generators import fibonacci_generator, demonstrate_generators
+from examples import run_all_demonstrations
+
+
+def print_header():
+    """Print a colorful header for the application."""
+    if sys.stdout.isatty():  # Only use colors if output is a terminal
+        print(f"{Colors.BRIGHT_BLUE}{SEPARATOR}")
+        print(f"{Colors.BRIGHT_GREEN}{WELCOME_MESSAGE}")
+        print(f"{Colors.BRIGHT_BLUE}{SEPARATOR}{Colors.RESET}")
     else:
-        return n * factorial(n - 1)
+        print(SEPARATOR)
+        print(WELCOME_MESSAGE)
+        print(SEPARATOR)
 
-# Function to check if a number is prime
-def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(math.sqrt(num)) + 1):
-        if num % i == 0:
-            return False
-    return True
 
-# Function to generate Fibonacci sequence
-def fibonacci_sequence(length):
-    fib = [0, 1]
-    for i in range(2, length):
-        fib.append(fib[-1] + fib[-2])
-    return fib
+def demonstrate_math_functions():
+    """Demonstrate mathematical functions from utils.math_utils."""
+    print(f"\n{Colors.YELLOW}📊 Mathematical Functions:{Colors.RESET}")
+    
+    # Factorial demonstration
+    factorial_num = 5
+    print(f"Factorial of {factorial_num}: {factorial(factorial_num)}")
+    
+    # Prime checking
+    prime_candidate = 17
+    print(f"Is {prime_candidate} prime? {is_prime(prime_candidate)}")
+    
+    # Fibonacci sequence
+    fib_seq = fibonacci_sequence(DEFAULT_FIBONACCI_LENGTH)
+    print(f"First {DEFAULT_FIBONACCI_LENGTH} Fibonacci numbers: {fib_seq}")
 
-# Function to print a greeting
-def greet(name):
-    print(f"Hello, {name}!")
 
-# Main execution starts here
-if __name__ == "__main__":
-    # Print a header
-    print("Welcome to this Python demo script!")
+def demonstrate_string_operations():
+    """Demonstrate string utilities."""
+    print(f"\n{Colors.YELLOW}📝 String Operations:{Colors.RESET}")
     
-    # Example of factorial calculation
-    print("Factorial of 5:", factorial(5))
+    # Greeting
+    name = random.choice(SAMPLE_NAMES)
+    greeting = greet(name)
+    print(f"Greeting: {greeting}")
     
-    # Example of prime check
-    print("Is 17 prime?", is_prime(17))
+    # Person info formatting
+    age = random.randint(20, 60)
+    person_info = format_person_info(name, age)
+    print(f"Person info: {person_info}")
+
+
+def demonstrate_data_structures():
+    """Demonstrate data structure utilities."""
+    print(f"\n{Colors.YELLOW}🗂️  Data Structures:{Colors.RESET}")
     
-    # Generate and print Fibonacci sequence
-    fib_seq = fibonacci_sequence(10)
-    print("First 10 Fibonacci numbers:", fib_seq)
+    # Lists
+    lists_demo = demonstrate_lists()
+    print(f"Squares (1-5): {lists_demo['squares']}")
+    print(f"Sorted fruits: {lists_demo['fruits']}")
     
-    # Greeting example
-    greet("World")
+    # Sets
+    sets_demo = demonstrate_sets()
+    print(f"Set union {sets_demo['set1']} ∪ {sets_demo['set2']}: {sets_demo['union']}")
+    print(f"Set intersection: {sets_demo['intersection']}")
     
-    # Loop to demonstrate iteration
-    for i in range(1, 11):
-        print(f"Counting: {i}")
+    # Dictionaries  
+    dict_demo = demonstrate_dictionaries()
+    print(f"Average score: {dict_demo['average_score']:.1f}")
+
+
+def demonstrate_object_oriented():
+    """Demonstrate object-oriented programming with Calculator class."""
+    print(f"\n{Colors.YELLOW}🧮 Object-Oriented Programming:{Colors.RESET}")
     
-    # List comprehension example
-    squares = [x**2 for x in range(1, 6)]
-    print("Squares of 1 to 5:", squares)
-    
-    # Dictionary example
-    person = {"name": "Alice", "age": 30}
-    print("Person info:", person)
-    
-    # Try-except block
-    try:
-        result = 10 / 0
-    except ZeroDivisionError:
-        print("Cannot divide by zero!")
-    
-    # Random number generation
-    random_num = random.randint(1, 100)
-    print("Random number between 1 and 100:", random_num)
-    
-    # String manipulation
-    text = "Python is fun!"
-    print("Uppercase:", text.upper())
-    print("Length:", len(text))
-    
-    # File handling simulation (without actual file)
-    print("Simulating file read: This is sample content.")
-    
-    # Class definition
-    class Calculator:
-        def add(self, a, b):
-            return a + b
-        
-        def subtract(self, a, b):
-            return a - b
-    
-    # Instantiate and use class
     calc = Calculator()
-    print("5 + 3 =", calc.add(5, 3))
-    print("5 - 3 =", calc.subtract(5, 3))
     
-    # Lambda function
-    multiply = lambda x, y: x * y
-    print("4 * 7 =", multiply(4, 7))
+    # Basic operations
+    result_add = calc.add(5, 3)
+    result_subtract = calc.subtract(10, 4)
+    result_multiply = calc.multiply(6, 7)
+    result_divide = calc.divide(15, 3)
     
-    # Set operations
-    set1 = {1, 2, 3}
-    set2 = {3, 4, 5}
-    print("Union:", set1 | set2)
-    print("Intersection:", set1 & set2)
+    print(f"5 + 3 = {result_add}")
+    print(f"10 - 4 = {result_subtract}")
+    print(f"6 × 7 = {result_multiply}")
+    print(f"15 ÷ 3 = {result_divide}")
     
-    # Tuple unpacking
-    point = (10, 20)
-    x, y = point
-    print(f"Point: ({x}, {y})")
+    # Show calculation history
+    history = calc.get_history()
+    print(f"Calculator history: {len(history)} operations performed")
+
+
+def demonstrate_decorators():
+    """Demonstrate decorator functionality."""
+    print(f"\n{Colors.YELLOW}🎭 Decorators:{Colors.RESET}")
     
-    # Enum simulation with constants
-    PI = 3.14159
-    print("Value of PI:", PI)
+    # Example decorated function
+    example_function("Decorator Demo")
     
-    # Conditional statements
-    age = 25
-    if age >= 18:
-        print("Adult")
+    # Cached function demonstration
+    print("\nCaching demonstration:")
+    expensive_calculation(5)  # Cache miss
+    expensive_calculation(5)  # Cache hit
+
+
+def demonstrate_generators_section():
+    """Demonstrate generator functionality."""
+    print(f"\n{Colors.YELLOW}🔄 Generators:{Colors.RESET}")
+    
+    # Fibonacci generator
+    print("First 8 Fibonacci numbers (using generator):")
+    fib_gen = fibonacci_generator()
+    fib_numbers = [next(fib_gen) for _ in range(8)]
+    print(f"Fibonacci: {fib_numbers}")
+    
+    # Run comprehensive generator demonstrations
+    print("\nRunning generator demonstrations...")
+    demonstrate_generators()
+
+
+def demonstrate_error_handling():
+    """Demonstrate error handling patterns."""
+    print(f"\n{Colors.YELLOW}⚠️  Error Handling:{Colors.RESET}")
+    
+    # Safe division
+    try:
+        result = 10 / 2
+        print(f"10 ÷ 2 = {result}")
+    except ZeroDivisionError:
+        print("Division by zero error!")
     else:
-        print("Minor")
+        print("Division completed successfully")
     
-    # While loop
-    count = 0
-    while count < 5:
-        print("While loop iteration:", count)
-        count += 1
-    
-    # Generator expression
-    gen = (x for x in range(3))
-    for val in gen:
-        print("Generator value:", val)
-    
-    # Decorators (simple example)
-    def my_decorator(func):
-        def wrapper():
-            print("Before function call")
-            func()
-            print("After function call")
-        return wrapper
-    
-    @my_decorator
-    def say_hello():
-        print("Hello from decorated function!")
-    
-    say_hello()
-    
-    # List methods
-    fruits = ["apple", "banana", "cherry"]
-    fruits.append("date")
-    print("Fruits list:", fruits)
-    fruits.sort()
-    print("Sorted fruits:", fruits)
-    
-    # Dictionary methods
-    scores = {"math": 95, "science": 88}
-    print("Average score:", sum(scores.values()) / len(scores))
-    
-    # String formatting
-    name = "Bob"
-    age = 28
-    print(f"{name} is {age} years old.")
-    
-    # Import from module
-    from datetime import date
-    today = date.today()
-    print("Today's date:", today)
-    
-    # Exception handling with else
+    # Exception with Calculator
+    calc = Calculator()
     try:
-        num = int("123")
-    except ValueError:
-        print("Invalid number")
-    else:
-        print("Number is:", num)
-    
-    # Finally block
-    try:
-        file = open("nonexistent.txt", "r")
-    except FileNotFoundError:
-        print("File not found")
-    finally:
-        print("Cleanup done")
-    
-    # Recursion example (simple)
-    def countdown(n):
-        if n > 0:
-            print(n)
-            countdown(n - 1)
-        else:
-            print("Blast off!")
-    
-    countdown(3)
-    
-    # Map function
-    numbers = [1, 2, 3, 4]
-    doubled = list(map(lambda x: x * 2, numbers))
-    print("Doubled numbers:", doubled)
-    
-    # Filter function
-    evens = list(filter(lambda x: x % 2 == 0, numbers))
-    print("Even numbers:", evens)
-    
-    # Reduce simulation (using functools)
-    from functools import reduce
-    product = reduce(lambda x, y: x * y, numbers)
-    print("Product:", product)
-    
-    # Context manager simulation
-    print("Simulating context manager: Resource acquired and released.")
-    
-    # Async simulation (commented, as it's advanced)
-    # import asyncio
-    # async def async_task():
-    #     print("Async task")
-    # asyncio.run(async_task())
-    
-    # Error handling in functions
-    def divide(a, b):
-        if b == 0:
-            raise ValueError("Division by zero")
-        return a / b
-    
-    try:
-        print(divide(10, 2))
+        calc.divide(10, 0)
     except ValueError as e:
-        print(e)
+        print(f"Calculator error: {e}")
+
+
+def demonstrate_advanced_features():
+    """Demonstrate advanced Python features."""
+    print(f"\n{Colors.YELLOW}🚀 Advanced Features:{Colors.RESET}")
     
-    # Working with bytes
-    byte_data = b"Hello"
-    print("Bytes:", byte_data)
+    # List comprehensions
+    squares = [x**2 for x in range(1, 6)]
+    print(f"Squares (1-5) via comprehension: {squares}")
     
-    # JSON simulation (without import)
-    print("Simulating JSON: {'key': 'value'}")
+    # Lambda functions
+    multiply = lambda x, y: x * y
+    print(f"Lambda multiplication (4 × 7): {multiply(4, 7)}")
     
-    # Performance note
-    print("This script demonstrates various Python features.")
+    # Map and filter
+    numbers = [1, 2, 3, 4, 5, 6]
+    doubled = list(map(lambda x: x * 2, numbers))
+    evens = list(filter(lambda x: x % 2 == 0, numbers))
     
-    # End of script
-    print("Script execution completed.")
+    print(f"Original numbers: {numbers}")
+    print(f"Doubled: {doubled}")
+    print(f"Evens only: {evens}")
+
+
+@timer
+def run_comprehensive_demonstrations():
+    """Run all comprehensive demonstrations."""
+    print(f"\n{Colors.YELLOW}🎯 Comprehensive Demonstrations:{Colors.RESET}")
+    results = run_all_demonstrations()
     
+    # Show a sample of results
+    print(f"Control flow example - age category: {results['control_flow']['age_category']}")
+    print(f"Functional programming - product: {results['functional_programming']['product']}")
+    print(f"Today's date: {results['date_operations']['today']}")
+
+
+def print_footer():
+    """Print completion message."""
+    print(f"\n{Colors.BRIGHT_BLUE}{SEPARATOR}")
+    print(f"{Colors.BRIGHT_GREEN}{COMPLETION_MESSAGE}")
+    print(f"{Colors.BRIGHT_BLUE}{SEPARATOR}{Colors.RESET}")
+
+
+def main():
+    """
+    Main execution function that orchestrates all demonstrations.
+    """
+    # Print header
+    print_header()
+    
+    try:
+        # Run all demonstration sections
+        demonstrate_math_functions()
+        demonstrate_string_operations()
+        demonstrate_data_structures()
+        demonstrate_object_oriented()
+        demonstrate_decorators()
+        demonstrate_generators_section()
+        demonstrate_error_handling()
+        demonstrate_advanced_features()
+        run_comprehensive_demonstrations()
+        
+    except KeyboardInterrupt:
+        print(f"\n{Colors.YELLOW}Program interrupted by user.{Colors.RESET}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n{Colors.RED}An error occurred: {e}{Colors.RESET}")
+        sys.exit(1)
+    
+    # Print completion message
+    print_footer()
+
+
+if __name__ == "__main__":
+    main()
