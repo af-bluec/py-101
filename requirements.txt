@@ -1,0 +1,13 @@
+# Python 101 Dependencies
+
+# No external dependencies required - this project uses only Python standard library
+# This file is included for completeness and future extensibility
+
+# Optional development dependencies (not required for basic usage):
+# pytest>=7.0.0
+# black>=22.0.0
+# mypy>=0.950
+# flake8>=4.0.0
+
+# If you want to add these development tools, uncomment the lines above
+# and install with: pip install -r requirements.txt
