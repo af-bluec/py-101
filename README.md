@@ -48,6 +48,53 @@ The `main.py` script demonstrates:
 - Random number generation
 - Date operations
 
+## NEW FUNCTIONS ADDED
+
+### Advanced Mathematical Functions
+- **gcd(a, b)**: Calculate Greatest Common Divisor using Euclidean algorithm
+- **lcm(a, b)**: Calculate Least Common Multiple
+- **power_of_two(n)**: Check if a number is a power of two
+- **perfect_square(n)**: Check if a number is a perfect square
+
+### String Manipulation Utilities
+- **reverse_words(text)**: Reverse the order of words in a sentence
+- **count_vowels(text)**: Count the number of vowels in a string
+- **is_palindrome(text)**: Check if a string is a palindrome (ignoring case and spaces)
+- **capitalize_words(text)**: Capitalize the first letter of each word
+
+### Data Processing Functions
+- **find_max_min(numbers)**: Find the maximum and minimum values in a list
+- **average(numbers)**: Calculate the average of a list of numbers
+- **median(numbers)**: Calculate the median of a list of numbers
+- **remove_duplicates(lst)**: Remove duplicates from a list while preserving order
+
+### Utility Functions for Common Tasks
+- **format_currency(amount, currency_symbol)**: Format a number as currency
+- **generate_random_password(length)**: Generate a random password with letters and numbers
+- **celsius_to_fahrenheit(celsius)**: Convert Celsius to Fahrenheit
+- **fahrenheit_to_celsius(fahrenheit)**: Convert Fahrenheit to Celsius
+- **days_between_dates(date1, date2)**: Calculate the number of days between two dates
+
+### Algorithm Implementations
+- **binary_search(arr, target)**: Perform binary search on a sorted array
+- **bubble_sort(arr)**: Sort an array using bubble sort algorithm
+- **linear_search(arr, target)**: Perform linear search on an array
+- **count_occurrences(lst, element)**: Count how many times an element appears in a list
+- **flatten_list(nested_list)**: Flatten a nested list structure
+
+### Text Analysis Functions
+- **word_frequency(text)**: Count the frequency of each word in a text
+- **longest_word(text)**: Find the longest word in a text
+
+### Number Theory Functions
+- **prime_factors(n)**: Find all prime factors of a number
+- **sum_of_digits(n)**: Calculate the sum of digits in a number
+- **reverse_number(n)**: Reverse the digits of a number
+
+### Validation Functions
+- **is_email_valid(email)**: Basic email validation
+- **is_strong_password(password)**: Check if a password meets basic strength criteria
+
 ## Getting Started
 
 ### Prerequisites
