@@ -9,6 +9,7 @@ A comprehensive Python project demonstrating core programming concepts, data str
 - [Functions Overview](#functions-overview)
 - [Project Structure](#project-structure)
 - [Examples](#examples)
+- [Documentation](#documentation)
 - [Requirements](#requirements)
 - [Contributing](#contributing)
 - [License](#license)
@@ -120,7 +121,18 @@ py-101/
 │   └── data_examples.py   # Data structure examples
 ├── tests/
 │   └── test_functions.py  # Basic function tests
+├── docs/                   # Documentation
+│   ├── API.md             # API documentation
+│   ├── EXAMPLES.md        # Usage examples
+│   ├── INSTALLATION.md    # Installation guide
+│   ├── CONTRIBUTING.md    # Contribution guidelines
+│   ├── CODE_OF_CONDUCT.md # Community standards
+│   ├── CHANGELOG.md       # Version history
+│   ├── DEVELOPMENT.md     # Developer guide
+│   ├── FAQ.md             # Frequently asked questions
+│   └── FUNCTION_REFERENCE.md # Complete function reference
 ├── README.md              # This file
+├── LICENSE                # MIT license
 ├── TODO_py101_enhancement.md # Development tasks
 └── requirements.txt       # Dependencies (currently none)
 ```
@@ -167,6 +179,37 @@ unique = remove_duplicates(with_dupes)  # [1, 2, 3, 4]
 dict1 = {"a": 1, "b": 2}
 dict2 = {"c": 3, "d": 4}
 merged = merge_dicts(dict1, dict2)  # {"a": 1, "b": 2, "c": 3, "d": 4}
+```
+
+## Documentation
+
+Python 101 includes comprehensive documentation:
+
+### 📚 Core Documentation
+- **[Installation Guide](docs/INSTALLATION.md)** - Complete setup instructions for all platforms
+- **[API Reference](docs/API.md)** - Detailed documentation of all functions
+- **[Usage Examples](docs/EXAMPLES.md)** - Real-world usage patterns and examples
+- **[Function Reference](docs/FUNCTION_REFERENCE.md)** - Complete function catalog with complexity analysis
+
+### 🛠️ Development Documentation  
+- **[Contributing Guidelines](docs/CONTRIBUTING.md)** - How to contribute code and improvements
+- **[Development Guide](docs/DEVELOPMENT.md)** - Advanced development topics and patterns
+- **[Code of Conduct](docs/CODE_OF_CONDUCT.md)** - Community standards and guidelines
+
+### 📋 Project Information
+- **[Changelog](docs/CHANGELOG.md)** - Version history and release notes
+- **[FAQ](docs/FAQ.md)** - Frequently asked questions and troubleshooting
+- **[License](LICENSE)** - MIT license details
+
+### Quick Start
+```bash
+# Get started immediately
+git clone https://github.com/yourusername/py-101.git
+cd py-101
+python main.py
+
+# Read the docs
+ls docs/  # Browse available documentation
 ```
 
 ## Requirements
