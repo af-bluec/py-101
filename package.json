@@ -1,0 +1,43 @@
+{
+  "name": "multi-language-sample-project",
+  "version": "1.0.0",
+  "description": "A comprehensive sample project demonstrating various programming languages and development practices",
+  "main": "utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building project...\"",
+    "lint": "eslint *.js",
+    "start": "node utils.js"
+  },
+  "keywords": [
+    "sample",
+    "template",
+    "multi-language",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Sample Developer",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "axios": "^1.6.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/multi-language-sample-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/example/multi-language-sample-project/issues"
+  },
+  "homepage": "https://github.com/example/multi-language-sample-project#readme"
+}

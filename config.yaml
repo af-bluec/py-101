@@ -1,0 +1,144 @@
+# Multi-Language Sample Project Configuration
+
+# Application Settings
+app:
+  name: "Multi-Language Sample Project"
+  version: "1.0.0"
+  description: "A comprehensive sample project demonstrating various programming languages and development practices"
+  environment: "development"
+  debug: true
+  port: 8080
+
+# Database Configuration
+database:
+  host: "localhost"
+  port: 5432
+  name: "sample_db"
+  username: "sample_user"
+  password: "sample_password"
+  pool_size: 10
+  timeout: 30
+  ssl_enabled: false
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "app.log"
+  max_size: "10MB"
+  backup_count: 5
+  console_output: true
+
+# API Settings
+api:
+  base_url: "https://api.example.com"
+  timeout: 30
+  rate_limit: 100
+  retry_attempts: 3
+  retry_delay: 1000
+
+# Cache Configuration
+cache:
+  enabled: true
+  type: "redis"
+  host: "localhost"
+  port: 6379
+  ttl: 3600
+  max_memory: "100MB"
+
+# Security Settings
+security:
+  jwt_secret: "your-jwt-secret-key-here"
+  jwt_expiration: 3600
+  bcrypt_rounds: 12
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+  allowed_methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+
+# File Storage
+storage:
+  type: "local"
+  path: "./uploads"
+  max_file_size: "10MB"
+  allowed_extensions:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".gif"
+    - ".pdf"
+    - ".txt"
+    - ".doc"
+    - ".docx"
+
+# Email Configuration
+email:
+  smtp_host: "smtp.example.com"
+  smtp_port: 587
+  username: "noreply@example.com"
+  password: "email-password"
+  use_tls: true
+  from_address: "noreply@example.com"
+  from_name: "Sample Project"
+
+# Features Flags
+features:
+  user_registration: true
+  email_verification: true
+  password_reset: true
+  file_upload: true
+  notifications: true
+  analytics: false
+  maintenance_mode: false
+
+# External Services
+services:
+  payment_gateway:
+    provider: "stripe"
+    public_key: "pk_test_example"
+    secret_key: "sk_test_example"
+    webhook_secret: "whsec_example"
+  
+  analytics:
+    google_analytics_id: "GA-XXXXXXXXX"
+    enabled: false
+  
+  social_auth:
+    google:
+      client_id: "google-client-id"
+      client_secret: "google-client-secret"
+    facebook:
+      app_id: "facebook-app-id"
+      app_secret: "facebook-app-secret"
+
+# Development Settings
+development:
+  hot_reload: true
+  debug_toolbar: true
+  profiling: false
+  mock_external_apis: true
+  seed_database: true
+
+# Testing Configuration
+testing:
+  database_url: "sqlite:///:memory:"
+  parallel_execution: true
+  coverage_threshold: 80
+  test_data_path: "./tests/fixtures"
+
+# Monitoring and Metrics
+monitoring:
+  enabled: true
+  metrics_endpoint: "/metrics"
+  health_check_endpoint: "/health"
+  collect_performance_metrics: true
+  alert_thresholds:
+    cpu_usage: 80
+    memory_usage: 85
+    disk_usage: 90
+    response_time: 5000
