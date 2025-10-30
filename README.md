@@ -4,7 +4,7 @@ A comprehensive collection of Python files demonstrating various features, conce
 
 ## 📚 Overview
 
-This project contains 11 Python files (including `main.py`) that showcase different aspects of Python programming, from basic data structures to advanced features like async programming and metaclasses.
+This project contains 14 Python files (including `main.py`) that showcase different aspects of Python programming, from basic data structures to advanced features like async programming, testing, and regular expressions.
 
 ## 📁 File Structure
 
@@ -21,6 +21,9 @@ This project contains 11 Python files (including `main.py`) that showcase differ
 ├── 08_async_programming.py      # Async/await and asyncio patterns
 ├── 09_context_managers.py       # Context managers and resource management
 ├── 10_advanced_features.py      # Type hints, dataclasses, metaclasses, etc.
+├── 11_regular_expressions.py    # Pattern matching and text processing with regex
+├── 12_modules_packages.py       # Module system, imports, and package structure
+├── 13_testing_debugging.py      # Unit testing, debugging, and profiling
 └── README.md                    # This file
 ```
 
@@ -141,6 +144,47 @@ done
 - Collections (`defaultdict`, `Counter`, `deque`)
 - `__slots__` for memory optimization
 
+### 11. Regular Expressions (`11_regular_expressions.py`)
+- Basic pattern matching with `re.search()`, `re.match()`, `re.findall()`
+- Character classes and special sequences (`\d`, `\w`, `\s`)
+- Quantifiers (`*`, `+`, `?`, `{n,m}`)
+- Groups and capturing patterns
+- Named groups for better readability
+- Email and phone number validation
+- Text substitution with `re.sub()`
+- Splitting strings with regex
+- Lookahead and lookbehind assertions
+- URL parsing and practical examples
+- Compiled patterns for performance
+
+### 12. Modules & Packages (`12_modules_packages.py`)
+- Standard library imports (`math`, `random`, `datetime`)
+- Different import styles and best practices
+- `sys` module for system information
+- `os` module for file system operations
+- `pathlib` for modern path handling
+- `collections` module (`Counter`, `defaultdict`, `deque`, `namedtuple`)
+- `itertools` for iterator building blocks
+- `functools` for higher-order functions
+- JSON serialization and deserialization
+- Module attributes and introspection
+- Creating custom modules and packages
+- Import best practices (PEP 8)
+
+### 13. Testing & Debugging (`13_testing_debugging.py`)
+- Unit testing with `unittest` framework
+- Test fixtures with `setUp()` and `tearDown()`
+- Assertions and test methods
+- Testing exceptions with `assertRaises()`
+- Doctest for documentation testing
+- Assertions for debugging
+- Logging for better debugging
+- Debugging techniques and stack traces
+- Code profiling and timing
+- Test-driven development (TDD) concepts
+- Mocking and test isolation
+- Testing best practices and code coverage
+
 ## 💡 Key Concepts
 
 ### Python Philosophy (The Zen of Python)
@@ -176,11 +220,14 @@ import this
 5. `05_error_handling.py`
 6. `06_comprehensions.py`
 7. `07_iterators_generators.py`
+8. `11_regular_expressions.py`
+9. `12_modules_packages.py`
 
 **Advanced** → Master these:
-8. `08_async_programming.py`
-9. `09_context_managers.py`
-10. `10_advanced_features.py`
+10. `08_async_programming.py`
+11. `09_context_managers.py`
+12. `10_advanced_features.py`
+13. `13_testing_debugging.py`
 
 ## 🔧 Customization
 
@@ -238,6 +285,9 @@ This is a learning project. Feel free to:
 - ✅ Type Hints
 - ✅ Dataclasses
 - ✅ Metaclasses
+- ✅ Regular Expressions
+- ✅ Modules & Packages
+- ✅ Testing & Debugging
 - ✅ And much more!
 
 ## 🎓 Next Steps
